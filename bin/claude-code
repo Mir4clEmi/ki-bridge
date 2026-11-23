@@ -1,0 +1,8 @@
+#!/bin/zsh
+# Startet die Claude-Code-CLI. Nutzt ~/.local/bin/claude, falls installiert,
+# sonst die neueste in der Claude-Desktop-App mitgelieferte Version.
+if [[ -x "$HOME/.local/bin/claude" ]]; then exec "$HOME/.local/bin/claude" "$@"; fi
+base="$HOME/Library/Application Support/Claude/claude-code"
+bin=$(ls -d "$base"/*/*/claude.app/Contents/MacOS/claude(N) 2>/dev/null | sort -V | tail -1)
+[[ -z "$bin" ]] && { echo "Claude Code CLI nicht gefunden" >&2; exit 1; }
+exec "$bin" "$@"

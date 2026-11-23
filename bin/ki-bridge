@@ -1,0 +1,6 @@
+#!/bin/zsh
+# Startet den ki-bridge MCP-Server.
+# zsh lädt dabei automatisch ~/.zshenv -> OPENAI_API_KEY / GEMINI_API_KEY sind verfügbar,
+# auch wenn der Server aus der Claude-Desktop-App (ohne Terminal) gestartet wird.
+SCRIPT_DIR="${0:A:h}"
+exec "$HOME/.local/bin/uv" run --quiet --directory "${SCRIPT_DIR:h}" ki-bridge "$@"
