@@ -1,0 +1,40 @@
+# Python / uv
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.venv
+
+# Secrets (keys belong in environment variables, see .env.example)
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Personal local state: balance, usage log, handoff lists
+state/
+usage_log.csv
+handoffs.md
+
+# Personal instructions (templates: *.example.md)
+DESKTOP_ANWEISUNGEN.md
+CLAUDE.md
+!CLAUDE.example.md
+
+# Generated files, tests, demo projects
+assets/
+tests/
+probelauf-spiel/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.mp3
+*.wav
+
+# Local tooling
+.claude/
+.DS_Store
